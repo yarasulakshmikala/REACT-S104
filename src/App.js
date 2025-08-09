@@ -3,35 +3,39 @@ import "./App.css";
 
 function App() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleContinue = (e) => {
     e.preventDefault();
-    alert(`Email: ${email}\nPassword: ${password}`);
+    alert(`Email entered: ${email}`);
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    <div>
+      {/* Top Navigation Bar */}
+      <nav className="navbar">
+        <div className="nav-links">
+          <a href="#">Server</a>
+          <a href="#">Log in</a>
+          <button className="get-started">Get started</button>
+        </div>
+      </nav>
 
-        <input
-          type="password"
-          placeholder="Enter Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+      {/* Login Form Section */}
+      <div className="form-container">
+        <h2>Create your account</h2>
+        <p>Enter your email address</p>
 
-        <button type="submit">Login</button>
-      </form>
+        <form onSubmit={handleContinue}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit" className="continue-btn">Continue</button>
+        </form>
+      </div>
     </div>
   );
 }
