@@ -13,7 +13,7 @@ function App() {
 
     // Basic validation
     if (!email || !password) {
-      setErrorMessage('⚠️ Please enter both email and password.');
+      setErrorMessage('Please enter both email and password.');
       return;
     }
 
@@ -28,7 +28,7 @@ function App() {
       setLoading(false);
       setEmail('');
       setPassword('');
-      alert('✅ Login successful! (Simulated)');
+      alert('Login successful! (Simulated)');
     }, 1500);
   };
 
@@ -67,7 +67,7 @@ function App() {
                 className="toggle-btn"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? '🙈' : '👁️'}
+                {showPassword ? 'Hide' : 'Show'}
               </button>
             </div>
           </div>
@@ -75,6 +75,12 @@ function App() {
           <button type="submit" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
+
+          <div className="login-footer">
+            <p>
+              Don’t have an account? <a href="#">Sign up</a>
+            </p>
+          </div>
         </form>
       </header>
     </div>
@@ -82,3 +88,4 @@ function App() {
 }
 
 export default App;
+
