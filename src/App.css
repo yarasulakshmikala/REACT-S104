@@ -135,5 +135,16 @@ button[type="submit"]:disabled {
 .login-footer a:hover {
   text-decoration: underline;
 }
+.link-btn {
+  background: none;
+  border: none;
+  color: #2575fc;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: underline;
+  padding: 0;
+}
+
 
 
