@@ -5,7 +5,7 @@ test('renders login form correctly', () => {
   render(<App />);
 
   // Check for the heading
-  const headingElement = screen.getByText(/login/i);
+  const headingElement = screen.getByRole('heading', { name: /login/i });
   expect(headingElement).toBeInTheDocument();
 
   // Check for email input
@@ -20,3 +20,4 @@ test('renders login form correctly', () => {
   const loginButton = screen.getByRole('button', { name: /login/i });
   expect(loginButton).toBeInTheDocument();
 });
+
